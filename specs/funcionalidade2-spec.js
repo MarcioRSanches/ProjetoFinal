@@ -13,16 +13,19 @@ describe('Funcionalidade - 2', () => {
         var addDell  = new AddRemovePage()
 
         await menus.clicarNoMenuAddRemove()
+        await console.log("* OK ** Clicou no menu")
 
         await addDell.clickBtnADD()
+        await console.log("* OK ** Clicou no botão ADD")
 
         var verificaSeBtnDeleteExiste = addDell.retornaBtnDELVisivel()
-
-        expect(verificaSeBtnDeleteExiste).toContain('Delete')
+        
+        expect(verificaSeBtnDeleteExiste).toContain("Delete")
+        await console.log("* OK ** Verificou se o delete sumiu")
 
     })
 
-    it('Abrir a janela, clicando no link Add/Remove e clicar no botão Add, clicar no Delete e ver se ele some', async () => {
+    xit('Abrir a janela, clicando no link Add/Remove e clicar no botão Add, clicar no Delete e ver se ele some', async () => {
 
         await browser.get('https://the-internet.herokuapp.com')
 
@@ -37,11 +40,11 @@ describe('Funcionalidade - 2', () => {
 
         var verificaSeBtnDeleteExiste = addDell.retornaBtnDELInvisivel()
 
-        expect(verificaSeBtnDeleteExiste).toContain('Delete') 
+        expect(verificaSeBtnDeleteExiste).toBeDisplayed.toBe(false) 
 
     })
 
-    it('Abrir a janela, clicando no link Add/Remove 3 x e verificar se existem 3 botões delete', async () => {
+    xit('Abrir a janela, clicando no link Add/Remove 3 x e verificar se existem 3 botões delete', async () => {
 
         await browser.get('https://the-internet.herokuapp.com')
         
@@ -56,6 +59,7 @@ describe('Funcionalidade - 2', () => {
         
         let qtdeBtnDel = await element.all(by.css('.added-manually')).count()
         expect(qtdeBtnDel).toBe(3)
+     
 
     })
 
