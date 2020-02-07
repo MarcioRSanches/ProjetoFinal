@@ -16,24 +16,18 @@ class AddRemovePage {
 
     }
 
-    async clickBtnDEL() {
-
-        browser.wait(EC.elementToBeClickable(this.btnDelete, 3000))
-        return await this.btnDelete.click()    
-
-    }
 
     async retornaBtnDELVisivel() {
 
-        this.btnDelete = browser.wait(EC.presenceOf($('.added-manually')), 3000)
-        return await this.btnDelete.click()
-
+       return await browser.wait(EC.presenceOf($('.added-manually')), 3000)
+        
     }
 
-    async retornaBtnDELInvisivel() {
+    
+    async clickBtnDEL() {
 
-        this.btnDelete = browser.wait(EC.presenceOf($('.added-manually')), 3000)
-        return await this.btnDelete.getText()    
+        browser.wait(EC.elementToBeClickable(this.btnDelete, 3000))
+        return await this.btnDelete.click()   
 
     }
 
