@@ -21,7 +21,7 @@ describe('Funcionalidade - 2', () => {
         var verificaSeBtnDeleteExiste = addDell.retornaBtnDELVisivel()
              
         expect(verificaSeBtnDeleteExiste).toContain("Delete")
-        await console.log("* OK ** Verificou se o Delete existe"+ verificaSeBtnDeleteExiste)
+        await console.log("* OK ** Verificou se o Delete existe")
 
     })
 
