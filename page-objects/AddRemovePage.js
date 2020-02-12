@@ -19,8 +19,7 @@ class AddRemovePage {
 
     async retornaBtnDELVisivel() {
 
-        browser.wait(EC.isElementPresent($('.added-manually')), 3000)
-        return await this.btnDelete.click() 
+        return await browser.wait(EC.presenceOf($('.added-manually')), 3000)         
         
     }
 
