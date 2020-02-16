@@ -18,9 +18,10 @@ describe('Funcionalidade - 2', () => {
         await addDell.clickBtnADD()
         await console.log("* OK ** Clicou no botão ADD")
 
-        var verificaSeBtnDeleteExiste = addDell.retornaBtnDELVisivel()
-             
-        expect(verificaSeBtnDeleteExiste).toContain('added-manually')
+        var verificaSeBtnDeleteExiste = await addDell.retornaBtnDELVisivel()
+        console.log(verificaSeBtnDeleteExiste)
+
+        expect(verificaSeBtnDeleteExiste).toEqual('Delete')
         await console.log("* OK ** Verificou se o Delete existe")
 
     })
@@ -43,7 +44,7 @@ describe('Funcionalidade - 2', () => {
 
         var verificaSeBtnDeleteExiste = addDell.retornaBtnDELVisivel()
 
-        expect(verificaSeBtnDeleteExiste).toContain('added-manually')
+        expect(verificaSeBtnDeleteExiste).toEqual('Delete')
         await console.log("* OK ** Verificou se o botão Delete apagou")
 
     })
