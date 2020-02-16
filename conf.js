@@ -14,7 +14,7 @@ exports.config = {
 	
 	// define as suítes de teste
 	suites: {
-		main: 'specs/*2-spec.js'
+		main: 'specs/*-spec.js'
 	},
 
 	// configurações gerais para antes de iniciar os testes
@@ -44,8 +44,8 @@ exports.config = {
 	// define configurações para o navegador que será usado
 	capabilities: {
 		'browserName': 'chrome',
-//		shardTestFiles: true,
-// 		maxInstances: 5,
+		shardTestFiles: true,
+ 		maxInstances: 2  ,
 		'goog:chromeOptions': {
 			args: [
 				// '--headless',
