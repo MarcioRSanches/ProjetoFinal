@@ -64,10 +64,9 @@ describe('Funcionalidade - 2', () => {
         await addDell.clickBtnADD()
         await console.log("* OK ** Clicou no botão ADD 3x")
 
-        let qtdeBtnDel = await element.all(by.css('.added-manually')).count()
+        let qtdeBtnDel = await addDell.getQtdeBtnDelete()
         expect(qtdeBtnDel).toBe(3)
      
-
     })
 
   })

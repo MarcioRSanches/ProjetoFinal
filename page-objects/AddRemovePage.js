@@ -21,6 +21,11 @@ class AddRemovePage {
         return true
     }
   
+    async getQtdeBtnDelete() {
+        //return await element.all(by.css('.added-manually')).count()  
+        return await element.all(this.btnDelete.locator()).count()
+    }
+
     async clickBtnDEL() {
         await browser.wait(EC.elementToBeClickable(this.btnDelete, 3000))
         return await this.btnDelete.click()   
