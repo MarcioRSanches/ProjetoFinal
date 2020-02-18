@@ -14,7 +14,7 @@ exports.config = {
 	
 	// define as suítes de teste
 	suites: {
-		main: 'specs/*-spec.js'
+		main: 'specs/*3-spec.js'
 	},
 
 	// configurações gerais para antes de iniciar os testes
