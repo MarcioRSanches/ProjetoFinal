@@ -2,37 +2,34 @@ var EC = protractor.ExpectedConditions
 
 class BasicAuthPage {
 
-    constructor () {         
-        this.alert = browser.switchTo().alert()
-        //this.user  = browser.switchTo().alert().getText('Nome de usuário')
-        //this.pass  = browser.switchTo().alert().getText('Senha')
+    constructor () { 
+        this.alert  = browser.switchTo().alert()     
+        this.user   = browser.switchTo().alert().getText('Nome de usuário')
+        this.pass   = browser.switchTo().alert().getText('Senha')
     }
-    
-    async fazerLogin() {
+   
+    async iniciarSecao(user,pass) {
         await browser.wait(await EC.alertIsPresent(), 6000)
-        //await alert.sendKeys()
-        return await alert.accept()
+        await this.informarUser(user)
+        await this.informarPass(pass)
+    }
+
+    async informarUser(user) { 
+        await this.user.sendKeys(pass)
+    }
+    async informarPass(pass) { 
+        await this.pass.sendKeys(pass)
     }
 
     async cancelarLogin() {
-        await browser.wait(await EC.alertIsPresent(), 5000)
         return await alert.dismiss()
     }
 
-    async fazerLoginUser() {
-        await browser.wait(await EC.alertIsPresent(), 6000)
-        //await user.sendKeys('Marcio')
-        await browser.get('https://marcio:abc123@the-internet.herokuapp.com/basic_auth')
+    async fazerLogin() {
         return await alert.accept()
-    }   
+    }
 
-    async fazerLoginPass() {
-        await browser.wait(await EC.alertIsPresent(), 6000)
-        //await user.sendKeys('pwd123')
-        return await alert.accept()
-    }  
-
-
+ //await browser.get('https://marcio:abc123@the-internet.herokuapp.com/basic_auth')
 
 }
 module.exports = BasicAuthPage
