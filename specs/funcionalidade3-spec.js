@@ -14,17 +14,27 @@ describe('Funcionalidade - 3', () => {
     it('Fazer login sem informar o usuario e senha', async () => {
 
         await menus.clicarNoMenuBasicAuth()
-        await console.log("* OK ** Clicou no menu Basic Authcomm")
+        await console.log("* OK ** Clicou no menu Basic Auth")
+        
+        await auth.cancelarLogin()
 
-        await auth.fazerLogin()l
+    })
 
-            //browser.manage().timeouts().implicitlyWait(30000)
-            //browser.get("https://selenium:webdriver@chercher.tech/auth");
-            //browser.getTitle().then(function(title){
-            //    if(title == "Authentication Successful"){
-            //        console.log("Login successful")
-            //    }else{
-            //        console.log("Login Falied")
+    it('Fazer login informando apenaso usuario e senha', async () => {
+
+        await menus.clicarNoMenuBasicAuth()
+        await console.log("* OK ** Clicou no menu Basic Auth")
+        
+        await auth.fazerLoginUser()
+
+    })
+
+    it('Fazer login informando apenaso usuario e senha', async () => {
+
+        await menus.clicarNoMenuBasicAuth()
+        await console.log("* OK ** Clicou no menu Basic Auth")
+        
+        await auth.fazerLoginUser()
 
     })
 
