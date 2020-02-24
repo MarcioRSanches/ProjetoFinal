@@ -1,10 +1,10 @@
 const LinkMenus     = require('../page-objects/LinkMenus')
 const AddRemovePage = require('../page-objects/AddRemovePage')
 var EC = protractor.ExpectedConditions
-var menus   =  new LinkMenus()
-var addDel  =  new AddRemovePage()
 
 describe('Funcionalidade - 2', () => {
+    var menus   =  new LinkMenus()
+    var addDel  =  new AddRemovePage()
     
     beforeEach (async () =>  {
         await browser.get('https://the-internet.herokuapp.com')
