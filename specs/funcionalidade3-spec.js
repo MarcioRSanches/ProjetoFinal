@@ -18,8 +18,7 @@ describe('Funcionalidade - 3', () => {
 
         await auth.fazerLogin()
         await console.log("* OK ** Clicou no botão Fazer Login")
-
-    })
+     })
 
     it('Fazer login informando apenas o usuario, clicando no botão cancelar', async () => {
 
@@ -29,6 +28,9 @@ describe('Funcionalidade - 3', () => {
         await auth.cancelarLogin()
         await console.log("* OK ** Clicou no botão Cancelar")
 
+        var mensagem =  await element(by.css('body').getText())
+        await console.log(mensagem)
+        await expect(mensagem).toEqual('Not authorized')
     })
 
   })

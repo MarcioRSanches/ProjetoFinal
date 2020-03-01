@@ -2,18 +2,23 @@ var EC = protractor.ExpectedConditions
 
 class BasicAuthPage {
 
-    constructor () { 
+    constructor () {   
 
     }
+
     async cancelarLogin() {
-        await browser.wait(await EC.alertIsPresent(), 7000)
+        await browser.wait(await EC.alertIsPresent(), 5000)
+        await console.log("* OK ** Alerta presente")
         var alert = await browser.switchTo().alert()
+        await console.log("* OK ** Validou o alert")
         await alert.dismiss()
     }
+
     async fazerLogin() {
-        await browser.wait(await EC.alertIsPresent(), 7000)
+        await browser.wait(await EC.alertIsPresent(), 3000)
         var alert = await browser.switchTo().alert()
         await alert.accept()
     }
+
 }
 module.exports = BasicAuthPage
