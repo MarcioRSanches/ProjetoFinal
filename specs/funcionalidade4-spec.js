@@ -25,11 +25,14 @@ describe('Funcionalidade - 4', () => {
      it('Clicar nos dois checkboxes e verificar se estão selecionados', async () => {
 
         await menus.clicarNoMenuCheckboxes()
+        await browser.sleep(2000)
         await console.log(red+"[OK] "+blue+" - Clicou no menu Checkboxes "+reset)
-        var checkbox1 = element(by.css('//*[@id="checkboxes"]/input[1]'))
-        var checkbox2 = element(by.css('//*[@id="checkboxes"]/input[2]'))
+        var checkbox1 = element(by.xpath('//*[@id="checkboxes"]/input[1]'))
+        var checkbox2 = element(by.xpath('//*[@id="checkboxes"]/input[2]'))
+     
         await expect(checkbox1.isSelected())
         await checkbox1.click()
+       
         await expect(checkbox2.isSelected())
         await checkbox2.click()
 

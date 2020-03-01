@@ -7,7 +7,7 @@ class DropdownPage {
     }
 
     async selecionaOpcao2() {
-       await this.helpers.selectOptionByText(opcoes,'Option 2')
+       await helpers.selectOptionByText(this.opcoes,'Option 2')
     }
 }
 

@@ -7,7 +7,8 @@ class BasicAuthPage {
     }
 
     async cancelarLogin() {
-        await browser.wait(await EC.alertIsPresent(), 5000)
+        //await browser.wait(await EC.alertIsPresent(), 10000)
+        await browser.sleep(3000)
         await console.log("* OK ** Alerta presente")
         var alert = await browser.switchTo().alert()
         await console.log("* OK ** Validou o alert")

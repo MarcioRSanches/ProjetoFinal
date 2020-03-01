@@ -1,5 +1,5 @@
 const helpers    = require('protractor-helpers')
-//const Dropdown   = require('../page-objects/DropdownPage')
+const Dropdown   = require('../page-objects/DropdownPage')
 const LinkMenus  = require('../page-objects/LinkMenus')
 
 var EC = protractor.ExpectedConditions
@@ -11,7 +11,7 @@ describe('Funcionalidade - 5', () => {
     var reset = '\u001b[0m'
 
     var menus    = new LinkMenus()
-    //var dropdown = new Dropdown()
+    var dropdown = new Dropdown()
     
     beforeEach (async () =>  {
         await browser.get('https://the-internet.herokuapp.com')
@@ -27,11 +27,11 @@ describe('Funcionalidade - 5', () => {
 
         await menus.clicarNoMenuDropdown()
         await console.log(red+"[OK] "+blue+" - Clicou no menu Dropdown "+reset)
-        var opcoes = await element(by.id('dropdown'))
-        await helpers.selectOptionByText(opcoes,'Option 2')
-        await browser.sleep(2000)
+        // var opcoes = await element(by.id('dropdown'))
+        // await helpers.selectOptionByText(opcoes,'Option 2')
+        // await browser.sleep(2000)
 
-        //dropdown.selecionaOpcao2()     
+        dropdown.selecionaOpcao2()     
         await console.log(red+"[OK] "+blue+" - Selecionou a Option 2 "+reset)
         
     })

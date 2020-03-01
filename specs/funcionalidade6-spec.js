@@ -29,7 +29,8 @@ describe('Funcionalidade - 5', () => {
         var btnRetrieve = await element(by.id('form_submit'))
         await btnRetrieve.click()
         await browser.sleep(4000)
-        var mensagem = await element(by.css('#h1')).getText()
+        var mensagem = await element(by.css('h1')).getText()
+        //var mensagem = await element(by.tagName('h1')).getText()
 
         await expect(mensagem).toEqual('Internal Server Error')
 
