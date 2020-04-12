@@ -1,0 +1,15 @@
+npm init // inicializa aplicacao node
+npm install protractor --save-dev (instala protractor nas dependencias de desenvolvimento)
+npm install jasmine --save-dev (instala protractor nas dependencias de desenvolvimento)
+npm install protractor -g (instala de forma global)
+npm install webdriver-manager (faz a instalacao dos drivers dos navegadores -selenium, chromedriver, geckodriver)
+
+webdriver-manager update (atualiza o webdriver)
+
+no package.json
+
+opcao de remover pasta
+rm -rf node_modules (apaga a pasta node_modules)
+
+npm run webdriver-update (quando os drives nao estao na pasta que esta sendo testado)
+
